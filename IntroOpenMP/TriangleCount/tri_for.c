@@ -46,6 +46,7 @@ unsigned int count_triangles() {
   unsigned int delta = 0; 
 
   //The outer loop traverses over all possible vertices (y). The iteration starts with vertex #1
+  # pragma omp parallel for reduction(+:delta)
   for(unsigned int i = 1; i<N-1; i++) {					
 
     unsigned int *curr_row_x = IA+i;
