@@ -1,6 +1,6 @@
 run_small:
 	gcc -O2 triangle.c -o triangle.x -std=c99 -DN=6474 -DNUM_A=25144 -fopenmp
-	cat small_IA.txt small_JA.txt | ./triangle.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=4 ./triangle.x 10
 
 run_medium:
 	gcc -O2 triangle.c -o triangle.x -std=c99 -DN=9877 -DNUM_A=51946 -fopenmp
