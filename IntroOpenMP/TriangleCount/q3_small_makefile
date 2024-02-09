@@ -1,0 +1,34 @@
+run_small_tri_for:
+	gcc -O2 tri_for.c -o tri_for.x -std=c99 -DN=6474 -DNUM_A=25144 -fopenmp
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=1 ./tri_for.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=2 ./tri_for.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=4 ./tri_for.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=8 ./tri_for.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=16 ./tri_for.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=32 ./tri_for.x 10
+run_small_tri_dyn:
+	gcc -O2 tri_dyn.c -o tri_dyn.x -std=c99 -DN=6474 -DNUM_A=25144 -fopenmp
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=1 ./tri_dyn.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=2 ./tri_dyn.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=4 ./tri_dyn.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=8 ./tri_dyn.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=16 ./tri_dyn.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=32 ./tri_dyn.x 10
+
+run_small_tri_one:
+	gcc -O2 tri_one.c -o tri_one.x -std=c99 -DN=6474 -DNUM_A=25144 -fopenmp
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=1 ./tri_one.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=2 ./tri_one.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=4 ./tri_one.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=8 ./tri_one.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=16 ./tri_one.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=32 ./tri_one.x 10
+
+run_small_tri_Noverp:
+	gcc -O2 tri_Noverp.c -o tri_Noverp.x -std=c99 -DN=6474 -DNUM_A=25144 -fopenmp
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=1 ./tri_Noverp.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=2 ./tri_Noverp.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=4 ./tri_Noverp.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=8 ./tri_Noverp.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=16 ./tri_Noverp.x 10
+	cat small_IA.txt small_JA.txt | OMP_NUM_THREADS=32 ./tri_Noverp.x 10
